@@ -1,7 +1,9 @@
 const slider = document.querySelector(".slider");
 const slideLeft = document.querySelector(".slider_left");
+const slideRight = document.querySelector(".slider_right");
 const btnDown = document.querySelector(".slider_down");
 const btnUp = document.querySelector(".slider_up");
+const slidesImg = slideRight.querySelectorAll("div");
 let activeSlideIndex = 0;
 
 slideLeft.computedStyleMap.top = `-${(slidesImg.length - 1) * 100}vh`;
@@ -20,5 +22,6 @@ function changeSlide(direction) {
         ? (activeSlideIndex = slidesImg.length - 1)
         :activeSlideIndex;
     }
-    slideLeft.computedStyleMap.transform = `translateY(${activeSlideIndex * slideHeight}px)`;
+    slideRight.style.transform = `translateY(${activeSlideIndex * slideHeight}px)`;
+    slideLeft.style.transform = `translateY(${activeSlideIndex * slideHeight}px)`;
 }

@@ -48,6 +48,24 @@ body {
         }
     }
     /* .slider_right */
+    &_right {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 35%;
+        width: 65%;
+        & > div {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &_left,
+    &_right {
+        transition: 0.5s ease-in-out;
+    }
 
     /* .slider_down */
     &_down {
