@@ -18,7 +18,7 @@ function changeSlide(direction) {
     
     } else if (direction == "down") {
         --activeSlideIndex;
-        activeSlideIndex == slideImg.length - slideImg.length - 1
+        activeSlideIndex == slideImg.length - slidesImg.length - 1
         ? (activeSlideIndex = slidesImg.length - 1)
         :activeSlideIndex;
     }

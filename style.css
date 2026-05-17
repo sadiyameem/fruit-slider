@@ -18,15 +18,18 @@ body {
     overflow: hidden;
     width: 100vw;
     height: 100vh;
+}
 
-    /* .slider_left */
-    &_left {
+.slider_left {
         height: 100%;
         width: 35%;
         position: absolute;
         top: 0;
         left: 0;
-        & > div {
+        transition: 0.5s ease-in-out;
+}
+
+.slider_left > div {
             height: 100%;
             width: 100%;
             display: flex;
@@ -34,55 +37,51 @@ body {
             justify-content: center;
             flex-direction: column;
             color: white;
-        }
-        h1 {
+}
+.slider_left h1 {
             font-size: 40px;
             margin-bottom: 10px;
             margin-top: -30px;
         }
-        p {
+.slider_left p {
             padding: 0 55px;
             letter-spacing: 1px;
             line-height: 150%;
             text-align: center;
         }
-    }
-    /* .slider_right */
-    &_right {
+.slider_right {
         position: absolute;
         height: 100%;
         top: 0;
         left: 35%;
         width: 65%;
-        & > div {
+        transition: 0.5s ease-in-out;
+}
+.slider_right > div {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             height: 100%;
             width: 100%;
         }
-    }
-    &_left,
-    &_right {
-        transition: 0.5s ease-in-out;
-    }
 
-    /* .slider_down */
-    &_down {
+.slider_down {
         transform: translate(-100%, 0);
         border-radius: 10px 0 0 10px;
-        &:active {
-            transition: 0.2s;
-            top: 51%;
-        }
-    }
-    /* .slider_up */
-    &_up {
+}
+
+.slider_up {
         transform: translate(0, -100%);
         border-radius: 0 10px 10px 0;
-        &:active {
-            transition: 0.2s;
-            top: 49%;
-        }
-    }
+}
+
+.slider_buttons button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: none;
+    left: 0;
+    top: 50%;
+    font-size: 20px;
+    cursor: pointer;
 }
