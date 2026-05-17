@@ -6,22 +6,27 @@ const btnUp = document.querySelector(".slider_up");
 const slidesImg = slideRight.querySelectorAll("div");
 let activeSlideIndex = 0;
 
-slideLeft.computedStyleMap.top = `-${(slidesImg.length - 1) * 100}vh`;
 btnUp.addEventListener("click", () => changeSlide("up"));
 btnDown.addEventListener("click", () => changeSlide("down"));
 
 function changeSlide(direction) {
     const slideHeight = slider.clientHeight;
+
     if (direction == "up") {
         ++activeSlideIndex;
-        activeSlideIndex == slidesImg.length ? (activeSlideIndex = 0) : activeSlideIndex;
-    
-    } else if (direction == "down") {
+        if (activeSlideIndex >= slidesImg.length) {
+            activeSlideIndex = 0;
+        }
+    } else {
         --activeSlideIndex;
-        activeSlideIndex == slideImg.length - slidesImg.length - 1
-        ? (activeSlideIndex = slidesImg.length - 1)
-        :activeSlideIndex;
+        if (activeSlideIndex < 0) {
+            activeSlideIndex = slidesImg.length - 1;
+        }
     }
-    slideRight.style.transform = `translateY(${activeSlideIndex * slideHeight}px)`;
-    slideLeft.style.transform = `translateY(${activeSlideIndex * slideHeight}px)`;
+
+    slideRight.style.transform =
+        `translateY(-${activeSlideIndex * slideHeight}px)`;
+
+    slideLeft.style.transform =
+        `translateY(-${activeSlideIndex * slideHeight}px)`;
 }
